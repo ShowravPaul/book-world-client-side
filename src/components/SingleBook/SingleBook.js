@@ -3,14 +3,21 @@ import { useHistory } from 'react-router';
 import { TakenBookContext } from '../../App';
 import './SingleBook.css'
 
-const SingleBook = ({ book }) => {
+const SingleBook = ({book}) => {
     const { bookName, imageURL, writerName, price } = book;
+    const boughtBook = {
+        bookName: bookName,
+        imageURL: imageURL,
+        writerName: writerName,
+        price: price
+    }
+
     const [takenBook, setTakenBook] = useContext(TakenBookContext);
     setTakenBook(takenBook); // extra line, just for using it
     const history = useHistory();
 
-    const handleBuy = (book) => {
-        setTakenBook(book);
+    const handleBuy = (boughtBook) => {
+        setTakenBook(boughtBook);
         history.push(`/checkout`);
     }
 
@@ -21,7 +28,7 @@ const SingleBook = ({ book }) => {
                 <div className="card-body">
                     <p><b>{bookName}</b> by {writerName}</p>
                     <p>Price: ${price}</p>
-                    <button className="btn btn-primary" onClick={() => handleBuy(book)}> Buy </button>
+                    <button className="btn btn-primary" onClick={() => handleBuy(boughtBook)}> Buy </button>
                 </div>
             </div>
         </div>

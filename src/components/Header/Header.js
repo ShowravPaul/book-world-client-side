@@ -31,7 +31,7 @@ const Header = () => {
                     </li>
                     <li>
                         {
-                            loggedInUser.name ? <h5 style={{color: 'white'}}> {loggedInUser.name} </h5> : <Link to="/login">Login</Link>
+                            loggedInUser.name ? <h5 style={{color: 'gold'}}> {loggedInUser.name} </h5> : <Link to="/login">Login</Link>
                         }
                     </li>
                 </ul>

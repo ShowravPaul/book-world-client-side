@@ -44,7 +44,8 @@ const Login = () => {
     return (
         <div className="login">
             <h3>Login Now!</h3>
-            <button onClick={handleGoogleSignIn}>Sign in with Google</button>
+            <br/>
+            <button className="btn btn-info" onClick={handleGoogleSignIn}>Sign in with Google</button>
         </div>
     );
 };
