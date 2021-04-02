@@ -18,7 +18,7 @@ const Orders = () => {
         })
             .then(res => res.json())
             .then(data => setOrders(data));
-    }, [])
+    },[])
 
     return (
         <div className="container table">
