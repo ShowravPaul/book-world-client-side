@@ -2,12 +2,6 @@ import React, { useEffect, useState } from 'react';
 import SingleBook from '../SingleBook/SingleBook';
 
 const Home = () => {
-    const style = {
-        display: 'flex',
-        margin: '40px',
-        justifyContent: 'space-between'
-    }
-
     const [books, setBooks] = useState([]);
 
     useEffect(() => {
@@ -27,7 +21,7 @@ const Home = () => {
         <div className="container">
             <div className="row">
                 {
-                    books.map(book => <SingleBook key={book._id} book={book} ></SingleBook>) //key dea lagbo
+                    books.map(book => <SingleBook key={book._id} book={book} ></SingleBook>)
                 }
                 {/* {
                     <SingleBook book = {book}></SingleBook>

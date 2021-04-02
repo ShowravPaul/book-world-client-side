@@ -7,6 +7,8 @@ import { UserContext } from '../../App';
 
 const Header = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    setLoggedInUser(loggedInUser);// extra line, just for using it
+
     return (
         <div style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${header})` }} className="header">
             <nav className="nav">

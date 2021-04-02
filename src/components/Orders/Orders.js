@@ -6,6 +6,8 @@ const Orders = () => {
     const [orders, setOrders] = useState([]);
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
+    setLoggedInUser(loggedInUser); // extra line, just for using it
+
     useEffect(() => {
         fetch('http://localhost:5000/orders?email=' + loggedInUser.email, {
             method: 'GET',

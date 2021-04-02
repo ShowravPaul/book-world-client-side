@@ -6,6 +6,10 @@ const CheckOut = () => {
     const [takenBook, setTakenBook] = useContext(TakenBookContext);
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
+    // these 2 lines are extra, just for using them
+    setTakenBook(takenBook);
+    setLoggedInUser(loggedInUser);
+
     const saveOrderData = () => {
         const orderData = { ...loggedInUser, ...takenBook, data: new Date() };
         // console.log(orderData);
@@ -26,7 +30,6 @@ const CheckOut = () => {
         <div>
             <h3 className="success">Successfully done!!</h3>
             <div className="checkout">
-                {/* <h3>Successfully done!!</h3> */}
                 <h1>Thanks for buying!</h1>
                 <h4>You have just bought: </h4>
                 <p>Book: {takenBook.bookName}</p>

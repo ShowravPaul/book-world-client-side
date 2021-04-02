@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import './Admin.css'
 
 const Admin = () => {
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const [imageURL, setImageURL] = useState(null);
 
@@ -48,17 +48,17 @@ const Admin = () => {
       <h4>Add a new book!</h4>
       <br />
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input name="name" type="text" placeholder="Book name" ref={register} />
+        <input name="name" type="text" placeholder="Book name" ref={register} required />
         <br />
         <br />
         <p>Choose an image for the book:</p>
-        <input name="image" type="file" onChange={handleImageUpload} />
+        <input name="image" type="file" onChange={handleImageUpload} required />
         <br />
         <br />
-        <input name="writer" type="text" placeholder="Writer Name" ref={register} />
+        <input name="writer" type="text" placeholder="Writer Name" ref={register} required />
         <br />
         <br />
-        <input name="price" type="number" placeholder="Price" ref={register} />
+        <input name="price" type="number" placeholder="Price" ref={register} required />
         <br />
         <br />
         <input type="submit" />

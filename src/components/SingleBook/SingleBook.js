@@ -6,6 +6,7 @@ import './SingleBook.css'
 const SingleBook = ({ book }) => {
     const { bookName, imageURL, writerName, price } = book;
     const [takenBook, setTakenBook] = useContext(TakenBookContext);
+    setTakenBook(takenBook); // extra line, just for using it
     const history = useHistory();
 
     const handleBuy = (book) => {
