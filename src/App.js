@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
-import Header from './components/Header/Header';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import CheckOut from './components/CheckOut/CheckOut';
 import DashboardMain from './components/Dashboard/DashboardMain/DashboardMain';
@@ -21,6 +20,7 @@ import Navbar from './components/Navbar/Navbar';
 import Books from './components/Books/Books';
 import Payment from './components/Dashboard/UserDashboard/Payment/Payment';
 import Contact from './components/Contact/Contact';
+import OurServices from './components/OurServices/OurServices';
 
 export const UserContext = createContext();
 export const TakenBookContext = createContext();
@@ -58,6 +58,9 @@ function App() {
             </Route>
             <Route path="/contact-us">
               <Contact />
+            </Route>
+            <Route path="/our-services">
+              <OurServices />
             </Route>
             <Route path="/orderList">
               <OrderList />

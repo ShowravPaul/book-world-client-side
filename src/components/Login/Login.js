@@ -5,6 +5,8 @@ import firebaseConfig from './firebase.config';
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router-dom';
 import './Login.css'
+import loginPageImage from '../../images/loginPageImage.jpg'
+import Footer from '../Footer/Footer';
 
 const Login = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -44,11 +46,19 @@ const Login = () => {
   }
 
   return (
-    <div className="login">
-      <h3>Login Now!</h3>
-      <br />
-      <button className="btn btn-info" onClick={handleGoogleSignIn}>Sign in with Google</button>
-    </div>
+    <>
+    <section className="row d-flex align-items-center mt-3 ml-3 mb-5">
+      <div className="col-md-8 login-image">
+        <img src={loginPageImage} alt="" />
+      </div>
+      <div className="col-md-4">
+        <h3>Login Now!</h3>
+        <br />
+        <button className="btn btn-info" onClick={handleGoogleSignIn}>Sign in with Google</button>
+      </div>
+    </section>
+    <Footer></Footer>
+    </>
   );
 };
 

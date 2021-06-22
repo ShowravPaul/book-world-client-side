@@ -1,0 +1,12 @@
+.our-services{
+    margin-left: 17%;
+    margin-right: 15%;
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+.our-services button{
+    padding: 10% 11%;
+    margin: 2% 2%;
+    /* width: 200px; */
+}

@@ -34,7 +34,7 @@ const GiveReview = () => {
     return (
         <div className="mb-5">
             <UserDashboardMain></UserDashboardMain>
-            <div className="text-center mt-0">
+            <div className="text-center">
                 <h2 >How was your experience?</h2>
                 <h3>Write something about us...</h3>
             </div>
@@ -43,12 +43,11 @@ const GiveReview = () => {
                     <input id="review" type="text" placeholder="write something" required style={{width: "70%"}}/>
                     <br />
                     <br/>
-                    <h4>Give stars out of 5: </h4>
+                    <h4>Give rating stars [out of 5]: </h4>
                     <input id="numOfStar" type="number" placeholder="type an integer[1-5]" required style={{width: "20%"}}/>
                     <br />
                     <br/>
                     <div className="btn btn-primary" onClick={() => handleReview()}>submit</div>
-                    
                 </form>
             </div>
         </div>

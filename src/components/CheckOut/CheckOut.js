@@ -1,4 +1,3 @@
-import { Link } from '@material-ui/core';
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { TakenBookContext, UserContext } from '../../App';
