@@ -9,11 +9,18 @@ import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Header from './components/Header/Header';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import Admin from './components/Admin/Admin';
 import CheckOut from './components/CheckOut/CheckOut';
-import Orders from './components/Orders/Orders';
-import AddBook from './components/AddBook/AddBook';
-import ManageBook from './components/ManageBook/ManageBook';
+import DashboardMain from './components/Dashboard/DashboardMain/DashboardMain';
+import OrderList from './components/Dashboard/Adminpanel/OrderList/OrderList';
+import MakeAdmin from './components/Dashboard/Adminpanel/MakeAdmin/MakeAdmin';
+import ManageBooks from './components/Dashboard/Adminpanel/ManageBooks/ManageBooks';
+import AddBook from './components/Dashboard/Adminpanel/AddBook/AddBook';
+import MyOrderList from './components/Dashboard/UserDashboard/MyOrderList/MyOrderList';
+import GiveReview from './components/Dashboard/UserDashboard/GiveReview/GiveReview';
+import Navbar from './components/Navbar/Navbar';
+import Books from './components/Books/Books';
+import Payment from './components/Dashboard/UserDashboard/Payment/Payment';
+import Contact from './components/Contact/Contact';
 
 export const UserContext = createContext();
 export const TakenBookContext = createContext();
@@ -21,42 +28,61 @@ export const TakenBookContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
   const [takenBook, setTakenBook] = useState({});
-  
+
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <TakenBookContext.Provider value={[takenBook, setTakenBook]}>
-      {/* <p>Name: {loggedInUser.name}</p>
-      <p>email: {loggedInUser.email}</p> */}
-      <Router>
-        <Header />
-        <Switch>
-          <Route path="/home">
-            <Home />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <PrivateRoute path="/checkout">
-            <CheckOut />
-          </PrivateRoute>
-          <PrivateRoute path="/admin">
-            <Admin />
-          </PrivateRoute>
-          <PrivateRoute path="/manageBook">
-            <ManageBook />
-          </PrivateRoute>
-          <PrivateRoute path="/addBook">
-            <AddBook />
-          </PrivateRoute>
-          <PrivateRoute path="/orders">
-            <Orders />
-          </PrivateRoute>
-          <Route exact path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </Router>
-    </TakenBookContext.Provider>
+
+        <Router>
+          <Navbar/>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/home">
+              <Home />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+
+            {/* private route shuru hobe */}
+            <Route path="/books">
+              <Books />
+            </Route>
+            <Route path="/checkout">
+              <CheckOut />
+            </Route>
+            <Route path="/dashboard">
+              <DashboardMain />
+            </Route>
+            <Route path="/contact-us">
+              <Contact />
+            </Route>
+            <Route path="/orderList">
+              <OrderList />
+            </Route>
+            <Route path="/addBook">
+              <AddBook />
+            </Route>
+            <Route path="/makeAdmin">
+              <MakeAdmin />
+            </Route>
+            <Route path="/manageBooks">
+              <ManageBooks />
+            </Route>
+            <Route path="/myOrderList">
+              <MyOrderList />
+            </Route>
+            <Route path="/giveReview">
+              <GiveReview />
+            </Route>
+            <Route path="/payment">
+              <Payment />
+            </Route>
+          </Switch>
+        </Router>
+      </TakenBookContext.Provider>
     </UserContext.Provider>
   );
 }

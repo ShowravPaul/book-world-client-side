@@ -1,18 +1,19 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
+import AdminPanelMain from '../AdminPanelMain/AdminPanelMain';
 import './AddBook.css'
 
 const AddBook = () => {
     const { register, handleSubmit } = useForm();
 
     const [imageURL, setImageURL] = useState(null);
-
+    
     const onSubmit = data => {
         const bookData = {
             bookName: data.name,
             imageURL: imageURL,
-            writerName: data.writer,
+            bookWriter: data.writer,
             price: data.price
         };
 
@@ -42,26 +43,30 @@ const AddBook = () => {
                 console.log(error);
             });
     }
+
     return (
-        <div className="addBook">
-            <h4>Add a new book!</h4>
-            <br />
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <input name="name" type="text" placeholder="Book name" ref={register} required />
+        <div className="mb-5">
+            <AdminPanelMain></AdminPanelMain>
+            <div className="addBook">
+                <h4>Add a new Book!</h4>
                 <br />
-                <br />
-                <p>Choose an image for the book:</p>
-                <input name="image" type="file" onChange={handleImageUpload} required />
-                <br />
-                <br />
-                <input name="writer" type="text" placeholder="Writer Name" ref={register} required />
-                <br />
-                <br />
-                <input name="price" type="number" placeholder="Price" ref={register} required />
-                <br />
-                <br />
-                <input type="submit" />
-            </form>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <input name="name" type="text" placeholder="Book name" ref={register} required />
+                    <br />
+                    <br />
+                    <p>Choose an image for the book:</p>
+                    <input name="image" type="file" onChange={handleImageUpload} required />
+                    <br />
+                    <br />
+                    <input name="writer" type="text" placeholder="Writer name" ref={register} required />
+                    <br />
+                    <br />
+                    <input name="price" type="number" placeholder="Price" ref={register} required />
+                    <br />
+                    <br />
+                    <input type="submit" />
+                </form>
+            </div>
         </div>
     );
 };

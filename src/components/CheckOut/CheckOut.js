@@ -1,4 +1,6 @@
+import { Link } from '@material-ui/core';
 import React, { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import { TakenBookContext, UserContext } from '../../App';
 import './CheckOut.css'
 
@@ -11,7 +13,7 @@ const CheckOut = () => {
     setLoggedInUser(loggedInUser);
 
     const saveOrderData = () => {
-        const orderData = { ...loggedInUser, ...takenBook, data: new Date() };
+        const orderData = { ...loggedInUser, ...takenBook, date: new Date() };
         // console.log(orderData);
         fetch('http://localhost:5000/addOrder', {
             method: 'POST',
@@ -25,16 +27,30 @@ const CheckOut = () => {
     }
     saveOrderData();
 
+    const history = useHistory();
+    const handleBackToHome = () => {
+        history.push(`/home`);
+    }
+
     //eikhan theke email, date, price, book 
     return (
         <div>
             <h3 className="success">Successfully done!!</h3>
-            <div className="checkout">
-                <h1>Thanks for buying!</h1>
-                <h4>You have just bought: </h4>
-                <p>Book: {takenBook.bookName}</p>
-                <p>Writer: {takenBook.writerName}</p>
-                <p>Price: ${takenBook.price}</p>
+            <div className="row checkout">
+                <div className="col">
+                    <h1>Thanks for buying!</h1>
+                    <h4>You have just bought: </h4>
+                    <p>Book: {takenBook.bookName}</p>
+                    <p>Writer: {takenBook.writerName}</p>
+                    <p>Price: ${takenBook.price}</p>
+                </div>
+                <div className="col">
+                    <img src={takenBook.imageURL} alt="" />
+                </div>
+            </div>
+
+            <div style={{ margin: "100px 45%" }}>
+                <button onClick={()=>{handleBackToHome()}} className="btn btn-primary">Back to HOME</button>
             </div>
         </div>
     );

@@ -1,0 +1,12 @@
+.admin-panel{
+    margin-left: 17%;
+    margin-right: 15%;
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+.admin-panel button{
+    padding: 15% 5%;
+    margin: 2% 2%;
+    width: 200px;
+}

@@ -14,6 +14,7 @@ const SingleBook = ({book}) => {
 
     const [takenBook, setTakenBook] = useContext(TakenBookContext);
     setTakenBook(takenBook); // extra line, just for using it
+    
     const history = useHistory();
 
     const handleBuy = (boughtBook) => {
@@ -34,6 +35,5 @@ const SingleBook = ({book}) => {
         </div>
     );
 };
-import './SingleBook.css'
 
 export default SingleBook;

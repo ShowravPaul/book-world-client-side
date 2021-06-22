@@ -1,0 +1,12 @@
+.user-dashboard{
+    margin-left: 24%;
+    margin-right: 15%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.user-dashboard button{
+    padding: 15% 5%;
+    margin: 2% 2%;
+    width: 200px;
+}

@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import Carousel from '../Carousel/Carousel';
+import Footer from '../Footer/Footer';
+import ReviewMain from '../Review/ReviewMain/ReviewMain';
 import SingleBook from '../SingleBook/SingleBook';
 
 const Home = () => {
@@ -16,17 +19,22 @@ const Home = () => {
     //     price:100,
     //     imageURL:"google.com"
     // }
-     
+
     return (
-        <div className="container">
-            <div className="row">
-                {
-                    books.map(book => <SingleBook key={book._id} book={book} ></SingleBook>)
-                }
-                {/* {
+        <div>
+            <div className="container">
+                <Carousel></Carousel>
+                <div className="row">
+                    {
+                        books.map(book => <SingleBook key={book._id} book={book} ></SingleBook>)
+                    }
+                    {/* {
                     <SingleBook book = {book}></SingleBook>
                 } */}
+                </div>
             </div>
+            <ReviewMain></ReviewMain>
+            <Footer></Footer>
         </div>
     );
 };
