@@ -6,13 +6,13 @@ const ManageBooks = () => {
     const [books, setBooks] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/books')
+        fetch('https://project-3-2-book-world.herokuapp.com/books')
             .then(response => response.json())
             .then(data => setBooks(data))
     }, [])
 
     function handleRemove(book) {
-        fetch(`http://localhost:5000/delete/${book._id}`, {
+        fetch(`https://project-3-2-book-world.herokuapp.com/delete/${book._id}`, {
             method: "DELETE"
         })
             .then(res => res.json())
