@@ -6,7 +6,7 @@ const MakeAdmin = () => {
     const { register, handleSubmit } = useForm();
     
     const onSubmit = data => {
-        const url = `http://localhost:5000/addAdmin`;
+        const url = `https://project-3-2-book-world.herokuapp.com/addAdmin`;
         fetch(url, {
             method: 'POST',
             headers: {
