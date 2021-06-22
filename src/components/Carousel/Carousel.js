@@ -10,18 +10,18 @@ import { TakenBookContext } from '../../App';
 const Carousel = () => {
     const books = [
         {
-            bookName: "Cracking the coding interview",
-            writerName: "Gayle Laakmann McDowell",
-            price: 80,
-            imageURL: pic1,
-            description: "This is the most popular interview book for applying a software engineer role! Don't skip it!"
-        },
-        {
             bookName: "Data Structures and Algorithms",
             writerName: "Md. Mahbubul Hasan Shanto",
             price: 90,
             imageURL: pic2,
             description: "The best book about 'Data Structures and Algorithms' in Bangla."
+        },
+        {
+            bookName: "Cracking the coding interview",
+            writerName: "Gayle Laakmann McDowell",
+            price: 80,
+            imageURL: pic1,
+            description: "This is the most popular interview book for applying a software engineer role! Don't skip it!"
         },
         {
             bookName: "Head First JAVA",
@@ -55,7 +55,7 @@ const Carousel = () => {
                             <button className="btn btn-warning" onClick={() => handleBuy(books[0])}> Buy now </button>
                         </div>
                         <div class="col-md-5">
-                            <img src={pic1} class="d-block w-100" alt="..." />
+                            <img src={books[0].imageURL} class="d-block w-100" alt="..." />
                         </div>
                     </div>
                 </div>
@@ -69,7 +69,7 @@ const Carousel = () => {
                             <button className="btn btn-warning" onClick={() => handleBuy(books[1])}> Buy now </button>
                         </div>
                         <div class="col-md-5">
-                            <img src={pic2} class="d-block w-100" alt="..." />
+                            <img src={books[1].imageURL} class="d-block w-100" alt="..." />
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@ const Carousel = () => {
                             <button className="btn btn-warning" onClick={() => handleBuy(books[2])}> Buy now </button>
                         </div>
                         <div class="col-md-5">
-                            <img src={pic3} class="d-block w-100" alt="..." />
+                            <img src={books[2].imageURL} class="d-block w-100" alt="..." />
                         </div>
                     </div>
                 </div>

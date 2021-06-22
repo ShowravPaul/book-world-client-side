@@ -34,7 +34,7 @@ function App() {
       <TakenBookContext.Provider value={[takenBook, setTakenBook]}>
 
         <Router>
-          <Navbar/>
+          <Navbar />
           <Switch>
             <Route exact path="/">
               <Home />
@@ -45,13 +45,8 @@ function App() {
             <Route path="/login">
               <Login />
             </Route>
-
-            {/* private route shuru hobe */}
             <Route path="/books">
               <Books />
-            </Route>
-            <Route path="/checkout">
-              <CheckOut />
             </Route>
             <Route path="/dashboard">
               <DashboardMain />
@@ -61,6 +56,15 @@ function App() {
             </Route>
             <Route path="/our-services">
               <OurServices />
+            </Route>
+            
+            <PrivateRoute path="/testing">
+
+            </PrivateRoute>
+
+            {/* private route shuru hobe */}
+            <Route path="/checkout">
+              <CheckOut />
             </Route>
             <Route path="/orderList">
               <OrderList />

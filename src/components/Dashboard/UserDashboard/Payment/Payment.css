@@ -1,8 +1,30 @@
-.totalPrice{
-    border-radius: 35px;
-    border: 2px solid black;
-    height: 20%;
-    width: 50%;
-    margin: 0 27%;
-    padding: 3% 3%;
-  }
+  .order{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    border-radius: 10px;
+}
+.order-form input {
+    display: block;
+    margin-top: 30px;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 200px;
+}
+.error{
+    color: red;
+}
+.center_div{
+    /* margin-left: 20%;
+    margin-right: 40%; */
+    margin: 0 auto;
+    width:80% /* value of your choice which suits your alignment */
+}
+.right-part{
+    background-color: rgba(241, 205, 104, 0.315);
+}
+.left-part{
+    background-color: rgb(166, 236, 241);
+}

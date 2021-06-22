@@ -18,21 +18,44 @@ const DashboardMain = () => {
     let isAdmin = false;
 
     console.log(admins);
-    
-    for(let i=0; i<admins.length; i++){
-        if(admins[i].gmail === loggedInUser.email){
+
+    for (let i = 0; i < admins.length; i++) {
+        if (admins[i].gmail === loggedInUser.email) {
             isAdmin = true;
             break;
         }
     }
 
+    const [person, setPerson] = useState(null);
+
+    const admin = () => {
+        setPerson("admin")
+    }
+    const user = () => {
+        setPerson("user")
+    }
     return (
         <div>
             {/* <AdminPanelMain></AdminPanelMain> */}
-            <UserDashboardMain></UserDashboardMain>
+            {/* <UserDashboardMain></UserDashboardMain> */}
             {/* {
                 isAdmin ? <AdminPanelMain></AdminPanelMain> : <UserDashboardMain></UserDashboardMain>
             } */}
+
+            <div style={{ margin: "2% 35%" }}>
+                <h4>
+                    For testing purpose, one can access userpanel as well as admin panel.
+                    Anyone can login with a gmail account.
+                </h4>
+                <button onClick={() => admin()}>As an admin</button>
+                <button onClick={() => user()}>As an user</button>
+            </div>
+            {
+                person === "admin" ? <AdminPanelMain></AdminPanelMain> : <UserDashboardMain></UserDashboardMain>
+            }
+            {
+                isAdmin==="abcde" ? isAdmin=false : isAdmin=true // pls skip this line, just for using the isAdmin var 
+            }
         </div>
     );
 };

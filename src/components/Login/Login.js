@@ -54,7 +54,7 @@ const Login = () => {
       <div className="col-md-4">
         <h3>Login Now!</h3>
         <br />
-        <button className="btn btn-info" onClick={handleGoogleSignIn}>Sign in with Google</button>
+        <button className="btn btn-info" onClick={handleGoogleSignIn}>Login with Google</button>
       </div>
     </section>
     <Footer></Footer>
