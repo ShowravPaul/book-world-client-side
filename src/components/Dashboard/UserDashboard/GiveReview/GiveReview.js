@@ -15,7 +15,7 @@ const GiveReview = () => {
             numOfStar
         };
 
-        const url = `http://localhost:5000/addReview`;
+        const url = `https://project-3-2-book-world.herokuapp.com/addReview`;
 
         fetch(url, {
             method: 'POST',
