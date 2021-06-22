@@ -21,7 +21,7 @@ const Navbar = () => {
 
             <Link class="navbar-brand ml-5" to="/home">
                 <img src={logo} width="45" height="45" class="d-inline-block align-top float-left mr-3" alt="" />
-                <h3 className="web-name">THE BOOK WORLD</h3>
+                <h3 className="web-name">BOOK WORLD</h3>
             </Link>
 
             <div className="collapse navbar-collapse" id="navbarSupportedContent">

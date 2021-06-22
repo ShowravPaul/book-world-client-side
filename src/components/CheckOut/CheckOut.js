@@ -35,11 +35,11 @@ const CheckOut = () => {
     //eikhan theke email, date, price, book 
     return (
         <div>
-            <h3 className="success">Successfully done!!</h3>
+            <h3 className="success">Successfully added to your cart!!</h3>
             <div className="row checkout">
                 <div className="col">
                     <h1>Thanks for buying!</h1>
-                    <h4>You have just bought: </h4>
+                    <h4>You have just selected this book: </h4>
                     <p>Book: {takenBook.bookName}</p>
                     <p>Writer: {takenBook.writerName}</p>
                     <p>Price: ${takenBook.price}</p>
@@ -49,7 +49,7 @@ const CheckOut = () => {
                 </div>
             </div>
 
-            <div style={{ margin: "100px 45%" }}>
+            <div style={{ margin: "80px 45%" }}>
                 <button onClick={()=>{handleBackToHome()}} className="btn btn-primary">Back to HOME</button>
             </div>
         </div>
