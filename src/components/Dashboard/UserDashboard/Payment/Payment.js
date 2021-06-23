@@ -69,7 +69,8 @@ const Payment = () => {
     return (
         <>
             <UserDashboardMain></UserDashboardMain>
-
+            <h4 className="text-center">After a successful payment, we will talk to you over the phone within 2 hours.</h4>
+        
             {/* taking info here -------------------- */}
             <div className="row order mb-5">
                 <div className="col-md-6 p-5 left-part">
