@@ -42,13 +42,16 @@ const DashboardMain = () => {
                 isAdmin ? <AdminPanelMain></AdminPanelMain> : <UserDashboardMain></UserDashboardMain>
             } */}
 
-            <div style={{ margin: "2% 35%" }}>
-                <h4>
+            <div>
+                <h4 className="text-center">
                     For testing purpose, one can access userpanel as well as admin panel.
+                    <br />
                     Anyone can login with a gmail account.
+                    <br />
+                    <br />
+                    <button onClick={() => admin()}>As an admin</button>
+                    <button onClick={() => user()}>As an user</button>
                 </h4>
-                <button onClick={() => admin()}>As an admin</button>
-                <button onClick={() => user()}>As an user</button>
             </div>
             {
                 person === "admin" ? <AdminPanelMain></AdminPanelMain> : <UserDashboardMain></UserDashboardMain>
